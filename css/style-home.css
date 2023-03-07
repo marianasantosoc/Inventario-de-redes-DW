@@ -1,0 +1,10 @@
+body {
+    /* background-image: url(/images/fundo.png); */
+    background-color: darkslategray;
+}
+
+.menu-horizontal{
+    background-color: black;
+    color: white;
+    padding: 1%;
+}
