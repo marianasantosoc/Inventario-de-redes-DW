@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inventário de redes</title>
+    <link rel="shortcut icon" href="./images/logo.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  
+  <body style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"> 
+        <!--Aqui começa o Menu-horizontal-->
+        <nav style="background-color: rgb(29, 32, 32);" class="navbar navbar-expand-sm navbar-light nav-top">
+            <a class="navbar-brand" href="#">
+                <img style="border-radius: 20%; margin-left: 15px;" src="./images/logo.jpg" width="60" height="50" alt="">
+              </a>
+              <a style="color: white; text-align: center;" class="navbar-brand " href="#">Inventory</a>
+        </nav> 
+        <!--Aqui Termina o Menu-horizontal-->
+
+        <!--Aqui Começa o Menu-vertical-->
+        <div  class="container-fluid nav-infos">
+            <div class="row flex-nowrap" >
+                <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark" style="    box-sizing: border-box;">
+                    <div style="margin-top: 15%;" class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                        <a style="background-color: rgb(29 ,32, 32);width: 100%; text-align: center; border-color: rgb(28, 28, 29);" class="btn btn-secondary " role="button" href="./index.html">Nome da Empresa</a>
+                        <form name="pesquisar" id="pesquisar">
+                            <div class="inputWithIcon">
+                                <input style="width: 100%;" type="text" placeholder="Pesquisar">
+                                <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+                              </div>
+                        </form>
+                        <select name="opc0" id="opc0" class="btn btn-secondary bg-dark" style="border-color: transparent; margin-top: 15px; width: 100%;text-align: left; border: 0; ">
+                            <option style="border-color: transparent;" value="None">Ambientes</option>
+                            <option value="1">Prod</option>
+                            <option value="2">HML</option>
+                        </select>
+                        <a style="background-color: transparent; width: 100%;text-align: left; border: 0;" class="btn btn-secondary " role="button" href="/Projeto-dw/Falta.html">Máquinas Ativas</a>
+                        <a style="background-color: transparent;width: 100%; text-align: left;  border: 0;" class="btn btn-secondary " role="button" href="/Projeto-dw/Falta.html">Máquinas Inativas</a>
+                        <hr>
+                        <br>
+                        <!--Aqui começa o popup para inserir novas máquinas-->
+                        <a href="#openModal" style="background-color: transparent;width: 100%;text-align: left;  border: 0;" class="btn btn-secondary ">Adicionar Máquina</a>
+                        <div id="openModal" class="modalDialog">
+                        <div>
+                            <h3>Preencha com as informações solicitadas:</h3>
+                            <form id="new_maquina" autocomplete="off">
+                                <!-- <label for="maquina">Nome da máquina:</label>
+                                <input type="text" id="maquina" name="maquina" placeholder="Nome da maquina" style="width: 50%;"> -->
+                                <label for="estado">Estado da máquina:</label>
+                                <select id="estado" style="border: 0; background-color: transparent; color: rgb(143, 143, 143); margin-left: 5px;" id="opc0">
+                                    <option value="up">up</option>
+                                    <option value="down">down</option>
+                                </select>
+                                <br>
+                                <!-- <label for="ip">IP da máquina:</label>
+                                <input type="text" id="ip"  name="ip" placeholder="IP" style="width: 50%;"> -->
+                                <br>
+                                <button onclick="Add()" type="submit" style="background-color: rgb(49, 49, 49); border: 0; border-radius: 20px; color: white;">Salvar</button>
+                                <button onclick="location.href='#close'" style="background-color: rgb(49, 49, 49); border: 0; border-radius: 20px; color: white;">fechar</button>
+                            </form>
+                        </div>
+                        </div>
+                        <!--Aqui termina o popup para inserir novas máquinas-->
+                        <hr>
+                        <br>
+                        <br>
+                        <button type="button" id="config"style="background-color: transparent;width: 100%;text-align: left;  border: 0;" class="btn btn-secondary "  onclick="location.href='./config.html'" >Configurações</button>
+                    </div>
+                </div>
+                <!--Aqui Termina o Menu-vertical-->
+
+            <!--Aqui Começa a tabela de informações do PC-->
+            <div class="col py-3">
+                <table class="table table-striped " id="infos-pc">
+                <thead>
+                    <tr>
+                        <th scope="col" ><i class="fa fa-desktop" style="color: rgb(0, 0, 0);"></i>  Hostname</th>
+                        <th scope="col">Up/down</th>
+                        <th scope="col">IP Address</th>
+                        <th scope="col"></th>
+                        </tr>
+                </thead>
+                <tbody >
+                </tbody>
+                </table>
+                </div>
+                <!--Aqui Termina a tabela de informações do PC-->
+            </div>    
+        </div>
+  </body>
+  <script src="./java-script/home.js"></script>
+</html>

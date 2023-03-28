@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Configurações</title>
+    <link rel="shortcut icon" href="./images/logo.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/config.css" rel="stylesheet">
+    <!-- <link href="/Projeto-dw/css/style-home.css"> -->
+  </head>
+  
+  <body style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"> 
+        <!--Aqui começa o Menu-horizontal-->
+        <nav style="background-color: rgb(29, 32, 32);" class="navbar navbar-expand-lg navbar-light nav-top">
+            <a class="navbar-brand" href="#">
+                <img onclick="location.href='index.html'" style="border-radius: 20%; margin-left: 15px;" src="./images/logo.jpg" width="60" height="50" alt="">
+              </a>
+              <a style="color: white;" class="navbar-brand" href="#">Inventory</a>
+        </nav> 
+        <!--Aqui Termina o Menu-horizontal-->
+
+        <!--Aqui Começa o Menu-vertical-->
+        <div  class="container-fluid nav-infos">
+            <div class="row flex-nowrap" >
+                <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark" style="    box-sizing: border-box;">
+                    <div style="margin-top: 15%;" class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                        <button type="button" onclick="exibi('muda_nome_empresa')" style="background-color: transparent;width: 100%;text-align: left;  border: 0; margin-top: 25px;" class="btn btn-secondary ">Mudar o nome da empresa</button>
+                        <br>
+                        <hr>
+                        <button type="button" onclick="exibi('muda_perm_user')" style="background-color: transparent;width: 100%;text-align: left;  border: 0;" class="btn btn-secondary ">Mudar permissões de usuário</button>
+                        <button type="button" onclick="exibi('add_user')" style="background-color: transparent;width: 100%;text-align: left;  border: 0;" class="btn btn-secondary ">Adicionar usuário</button>
+                        <button type="button" onclick="exibi('rm_user')" style="background-color: transparent;width: 100%;text-align: left;  border: 0;" class="btn btn-secondary ">Remover usuário</button>
+                        <br>
+                        <br>
+                        <hr>
+                        <button type="button" onclick="exibi('delete_all')" style="background-color: transparent;width: 100%;text-align: left;  border: 0;" class="btn btn-secondary ">Excluir inventário</button>
+
+                    </div>
+                </div>
+                <div class="col py-3" >
+                    <form name="pesquisar" id="pesquisar">
+                        <div class="inputWithIcon">
+                            <input style="width: 100%;" type="text" placeholder="Pesquisar nas Configurações">
+                            <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+                          </div>
+                    </form>
+                    <br>
+                    <br>
+                    <span>
+                        <div class="container" id="muda_nome_empresa" style="background-color: rgb(238, 232, 232); padding: 50px; border-radius: 20px; ">
+                            <label for="empresa" style="margin-left: 10px;">Insira o nome da empresa:</label>
+                            <input type="text" id="empresa" placeholder="Novo nome da empresa" style="width: 30%;">
+                            <button class="button">Salvar</button>
+
+                        </div>
+ 
+                        <div  class="container" id="muda_perm_user" style="background-color: rgb(238, 232, 232); padding: 50px; border-radius: 20px; ">
+                            <label for="user" style="margin-left: 8px;">Insira o nome do usuário:</label>
+                            <input type="text" id="user" placeholder="Nome do usuário">
+                            <label for="perm" style="margin-left: 8px;">Nova permissão do usuário:</label>
+                                <select id="perm" style="border: 0; background-color: transparent; color: rgb(59, 59, 59); margin-left: 5px;">
+                                    <option value="adm">adm</option>
+                                    <option value="leitura">leitura</option>
+                                </select>
+                                <br>
+                            <button class="button" style="margin-top: 10px;">Salvar</button>
+                        </div>
+
+                        <div  class="container" id="add_user" style="background-color: rgb(238, 232, 232); padding: 50px; border-radius: 20px; ">
+                            <label for="user" style="margin-left: 8px;">Insira o nome do usuário:</label>
+                            <input type="text" id="user" placeholder="Nome do usuário">
+                            <label for="email" style="margin-left: 8px;">Insira o email usuário:</label>
+                            <input type="email" id="user" placeholder="email">
+                            <label for="email" style="margin-left: 8px;">Insira a senha:</label>
+                            <input type="password" id="user" placeholder="senha">
+                            <br> <br>
+                            <label for="perm" style="margin-left: 8px;">Permissão do usuário:</label>
+                                <select id="perm" style="border: 0; background-color: transparent; color: rgb(59, 59, 59); margin-left: 5px;">
+                                    <option value="adm">adm</option>
+                                    <option value="leitura">leitura</option>
+                                </select>
+                                <br>
+                            <button class="button" style="margin-top: 10px;">Salvar</button>
+                        </div>
+
+                        <div  class="container" id="rm_user" style="background-color: rgb(238, 232, 232); padding: 50px; border-radius: 20px; ">
+                            <label for="user" style="margin-left: 8px;">Insira o nome do usuário:</label>
+                            <input type="text" id="user" placeholder="Nome do usuário">
+                            <button class="button" style="margin-top: 10px;">Remover</button>
+
+                        </div>
+
+                        <div  class="container" id="delete_all" style="background-color: rgb(238, 232, 232); padding: 50px; border-radius: 20px; ">
+                            <p>Aqui deleta o inventário</p>
+                        </div>
+                    </span>
+                </div>
+            </div>
+</div>
+</body>
+<script src="./java-script/config.js"></script>
+</html>

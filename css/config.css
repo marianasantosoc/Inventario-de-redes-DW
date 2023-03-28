@@ -1,0 +1,22 @@
+.container {
+    display: none;
+
+}
+
+.container button{
+    margin-left: 5px;
+    background-color: rgb(0, 0, 0);
+    border: 0;
+    border-radius: 20px;
+    color: white;
+
+}
+
+.container button:hover{
+    background-color: rgb(255, 0, 0);
+}
+
+.container input{
+    background-color: transparent;
+    border: 0;
+}
