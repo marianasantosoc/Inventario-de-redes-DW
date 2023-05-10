@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inventário de redes</title>
+    <link rel="shortcut icon" href="./images/logo.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  
+  <body> 
+        <!--Aqui começa o Menu-horizontal-->
+        <div class="menu-horiz">   
+        <nav class="navbar navbar-expand">
+            <a class="navbar-brand " href="#">
+                <img  src="./images/logo.jpg">
+            </a>
+            <a class="navbar-brand" id="name-site">Inventory</a>
+            <input class="usuario_logado" type="button" id="usuario_logado" value="">
+            <a href="./login.html" class="log-out">
+                Logout 
+             <i class="fa fa-pad-left fa-sign-out" aria-hidden="true"></i></a>
+        </nav> 
+        </div>
+        <!--Aqui Termina o Menu-horizontal-->
+
+        <!--Aqui Começa o Menu-vertical-->
+        <div  class="container-fluid nav-infos">
+            <div class="row flex-nowrap" >
+                <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 ">
+                        <div class="menu-vertical">
+                            <!-- <a class="btn btn-secondary " href="./index.html" id="nome_empresa">Nome da Empresa</a> -->
+                            <!-- <p class="btn btn-secondary " id="nome_empresa">Nome da Empresa</p> -->
+                            <!-- <button class="btn btn-secondary " id="nome_empresa" value="Nome"></button> -->
+                            <input type="button" class="button-empresa" id="nome_empresa" value="">
+                        
+                            <div class="inputWithIcon">
+                                <input style="width: 100%;" type="text" placeholder="Pesquisar">
+                                <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+                            </div>
+                                    
+                            <!--Aqui começam as opções do menu lateral-->
+                            <div class="opc-menu-vertical">
+                            <hr>
+                            <button class="btn btn-secondary " onclick="location.href='./index.html'">Todas as máquinas</button>
+                            <button class="btn btn-secondary " onclick="Ver_maq_up_down('maquinadown')">Máquinas Ativas</button>
+                            <button class="btn btn-secondary " onclick="Ver_maq_up_down('maquinaup')">Máquinas Inativas</button>
+                            <button onclick="none_block()" class="btn btn-secondary ">Adicionar Máquina</button>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <hr>
+                            <button type="button" id="config" class="btn btn-secondary "  onclick="location.href='./config.html'" >Configurações</button>
+                            </div>
+                            <!--Aqui terminam as pções do menu lateral-->
+
+                            <!--Aqui começa o popup para inserir novas máquinas-->
+                            <div class="add-maq">
+                                <div class="formulario-new-maq">
+                                <form id="new_maquina" autocomplete="off" method="get">
+                                    <input type="text" id="maquina" name="maquina" required placeholder="Nome da máquina" style="width: 50%;">
+                                    <br>
+                                    <select id="estado">
+                                        <option value="up">up</option>
+                                        <option value="down">down</option>
+                                    </select>
+                                    <br>
+                                    <input type="text" id="ip"  name="ip" required placeholder="IP da máquina" style="width: 50%;">
+                                    <br>
+                                    <button onclick="Add_maquinas()" type="button" id="salvar">Salvar</button>
+                                    <button onclick="none_block()" type="button" id="close">Close</button>
+                                </form>
+                                </div>
+                            </div> 
+                            <!--Aqui termina o popup para inserir novas máquinas-->
+                        </div>
+                    </div>
+                </div>
+                <!--Aqui Termina o Menu-vertical-->
+
+                <!--Aqui Começa a tabela de informações do PC-->
+                <div class="col py-3">
+                    <table class="table table-striped " id="infos-pc">
+                    <thead>
+                        <tr>
+                            <th scope="col" ><i class="fa fa-desktop"></i>  Hostname</th>
+                            <th scope="col">Up/down</th>
+                            <th scope="col">IP Address</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    </table>
+                </div>
+                <!--Aqui Termina a tabela de informações do PC-->
+            </div>
+        </div>
+        <!--Aqui finalizamos as divs que abrangem todo o home-->
+    </body>
+  <script src="./js/home.js"></script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tela de Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style-login.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="./images/logo.jpg" alt="">
+        </div>
+        <div class="text-center mt-4 name">
+            Inventory
+        </div>
+        <form class="p-3 mt-3">
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="email" name="email" id="email" required placeholder="email">
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="fas fa-key"></span>
+                <input type="password" name="password" id="pwd" required placeholder="Password">
+            </div>
+            <button class="btn mt-3" id="submit" type="submit">Login</button>
+        </form>
+        <div class="text-center fs-6">
+            Don't have account?  <a href="cadastro.html">Sign up</a>
+        </div>
+    </div>
+    <script src="./js/login_cadastro.js"></script>
+</body>
+</html>
