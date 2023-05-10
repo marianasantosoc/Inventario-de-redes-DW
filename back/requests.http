@@ -1,0 +1,30 @@
+@jsonServer = http://10.0.51.62:3000
+@createdHostId = {{createHost.response.body.id}}
+
+### Create a new Host
+# @name createHost
+POST {{jsonServer}}/hosts
+Content-Type: application/json
+
+{
+  "name": "ifpb",
+  "address": "www.ifpb.edu.br"
+}
+
+### Read all Hosts
+GET {{jsonServer}}/hosts
+
+### Read a Host by id
+GET {{jsonServer}}/hosts/{{createdHostId}}
+
+### Update a Host
+PUT {{jsonServer}}/hosts/{{createdHostId}}
+Content-Type: application/json
+
+{
+  "name": "IFPB",
+  "address": "www.ifpb.edu.br"
+}
+
+### Delete a Host
+DELETE {{jsonServer}}/hosts/{{createdHostId}}

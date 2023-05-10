@@ -1,0 +1,69 @@
+{
+  "hosts": [
+    {
+      "maquina": "maq1",
+      "status": "up",
+      "ip": "1",
+      "userId": "ifpb",
+      "id": 1
+    },
+    {
+      "maquina": "maq2",
+      "status": "down",
+      "ip": "2",
+      "userId": "ifpb",
+      "id": 2
+    },
+    {
+      "maquina": "pc do if",
+      "status": "up",
+      "ip": "10.0.51.62",
+      "userId": "ifpb",
+      "id": 3
+    },
+    {
+      "maquina": "PC DO IF",
+      "status": "down",
+      "ip": "10.0.51.62",
+      "userId": "ZETA",
+      "id": 4
+    },
+    {
+      "maquina": "PC de Rodrigo",
+      "status": "up",
+      "ip": "10.0.13.146",
+      "userId": "ZETA",
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "nome": "Mariana Santos",
+      "email": "marisantosc@gmail.com",
+      "senha": "123",
+      "inventoryId": "ifpb",
+      "id": 1
+    },
+    {
+      "nome": "rodrigo1221000",
+      "email": "rodrigosgomespb@gmail.com",
+      "senha": "123",
+      "inventoryId": "ifpb",
+      "id": 2
+    },
+    {
+      "nome": "rodrigo1221",
+      "email": "rodrigo_santos32@gmail.com",
+      "senha": "digo",
+      "inventoryId": "ZETA",
+      "id": 3
+    },
+    {
+      "nome": "mariana1221",
+      "email": "marianasantos@gmail.com",
+      "senha": "123",
+      "inventoryId": "ZETA",
+      "id": 4
+    }
+  ]
+}
