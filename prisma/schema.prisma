@@ -14,24 +14,15 @@ model User {
   id       Int    @id @default(autoincrement())
   name     String
   email    String @unique
+  root     String
   empresa  String
   password String
-  host     Host[]
 }
 
 model Host {
-  id   Int    @id @default(autoincrement())
-  name String
-  ip   String @unique
-
-  Availability Availability[]
-  User         User[]
-}
-
-model Availability {
-  id        Int      @id @default(autoincrement())
-  status    Boolean
-  createdAt DateTime @default(now())
-  host      Host     @relation(fields: [hostId], references: [id])
-  hostId    Int
+  id        Int    @id @default(autoincrement())
+  name      String
+  ip        String
+  status    String
+  user_root String
 }

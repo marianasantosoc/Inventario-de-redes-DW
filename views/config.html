@@ -17,13 +17,20 @@
     <!--Aqui começa o Menu-horizontal-->
     <div class="menu-horiz">
         <nav class="navbar navbar-expand">
-            <a class="navbar-brand " href="/login">
+            <a class="navbar-brand" href="/home">
                 <img src="./public/images/logo.jpg">
             </a>
             <a class="navbar-brand" id="name-site">Inventory</a>
-            <a href="/logout" class="log-out">
-                Logout
-                <i class="fa fa-pad-left fa-sign-out" aria-hidden="true"></i></a>
+            <p class="usuario_logado">
+                Hi, <%= usuario %>
+
+            </p>
+            <form action="/logout">
+                <a class="log-out" href="/logout">
+                    Logout
+                    <i class="fa fa-pad-left fa-sign-out" aria-hidden="true"></i>
+                </a>
+            </form>
         </nav>
     </div>
     <!--Aqui Termina o Menu-horizontal-->
@@ -72,40 +79,47 @@
                     <input type="text" id="empresa" placeholder="Novo nome da empresa" style="width: 30%;">
                     <button class="button">Salvar</button>
                 </div>
-
-                <div class="container" id="muda_perm_user">
-                    <label for="user" style="margin-left: 8px;">Insira o nome do usuário:</label>
-                    <input type="text" id="user" placeholder="Nome do usuário">
-                    <label for="perm" style="margin-left: 8px;">Nova permissão do usuário:</label>
-                    <select id="perm"
-                        style="border: 0; background-color: transparent; color: rgb(59, 59, 59); margin-left: 5px;">
-                        <option value="adm">adm</option>
-                        <option value="leitura">leitura</option>
-                    </select>
-                    <br>
-                    <button class="button" style="margin-top: 10px;">Salvar</button>
-                </div>
-
-                <div class="container" id="add_user">
-                    <label for="user" style="margin-left: 8px;">Insira o nome do usuário:</label>
-                    <input type="text" id="user2" placeholder="Nome do usuário">
-                    <label for="email" style="margin-left: 8px;">Insira o email usuário:</label>
-                    <input type="email" id="email" placeholder="email">
-                    <label for="email" style="margin-left: 8px;">Insira a senha:</label>
-                    <input type="password" id="senha" placeholder="senha">
-                    <br> <br>
-                    <button class="button" style="margin-top: 10px;" onclick="Add_user_inventory()">Salvar</button>
-                </div>
-
-                <div class="container" id="rm_user">
-                    <label for="user" style="margin-left: 8px;">Insira o nome do usuário:</label>
-                    <input type="text" id="user3" placeholder="Nome do usuário">
-                    <button class="button" style="margin-top: 10px;">Remover</button>
-                    <br>
-                </div>
+                <form action="/add_user_inventory" method="post">
+                    <div class="container" id="add_user">
+                        <label for="user" style="margin-left: 8px;">Insira o nome do usuário:</label>
+                        <input type="text" id="newuser" name="newuser" placeholder="Nome do usuário">
+                        <label for="email" style="margin-left: 8px;">Insira o email usuário:</label>
+                        <input type="email" id="newemail" name="newemail" placeholder="email">
+                        <label for="email" style="margin-left: 8px;">Insira a senha:</label>
+                        <input type="password" id="senha" name="senha" placeholder="senha">
+                        <br> <br>
+                        <button class="button" style="margin-top: 10px;" type="submit">Salvar</button>
+                    </div>
+                </form>
+                <form action="/rm_user_inventory" method="post">
+                    <div class="container" id="rm_user">
+                        <table class="table table-striped " id="infos-pc">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Usuários</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% users.forEach((item)=> { %>
+                                    <tr>
+                                        <td>
+                                            <%= item.name %>
+                                        </td>
+                                        <td>
+                                            <button class="rm" id="id" name="id" value="<%= item.id %>" type="submit">
+                                                <i class="fa fa-trash" style="color: white;"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
 
                 <div class="container" id="delete_all">
-                    <p>Aqui deleta o inventário</p>
+                    <p>Ninguém mandou criar o inventário, agora fique com ele!</p>
                 </div>
             </div>
         </div>
@@ -113,5 +127,6 @@
     </div>
     <!--Aqui finalizamos as divs que abrangem todo o home do config-->
 </body>
+<script src="../public/functions/config.js"></script>
 
 </html>
